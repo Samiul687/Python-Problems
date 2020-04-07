@@ -1,0 +1,18 @@
+height = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+left = 0
+right = len(height) - 1
+maxArea = float("-inf")  # Initial maxArea is lowest possible number to avoid interference
+while left < right:
+    print(f"left is {left}")
+    print(f"right is {right}")
+    minNum = min(height[left], height[right]) # The vertical sides to calculate the area of the rectange are the 
+    # smallest number 
+    maxArea = max(maxArea, minNum * (right - left))  # Biggest number between old highest and new area is maxArea
+
+    # Whichever pointer points to shortest line is moved onto next number
+    if height[left] < height[right]:
+        left += 1
+    else:
+        right -= 1
+
+print(maxArea)
