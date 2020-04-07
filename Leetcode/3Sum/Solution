@@ -8,7 +8,7 @@ print(nums)
 for i in range(length - 2):
     print(f"\ni is currently at index {i}: value {nums[i]}")
 
-    # Is only activated when we have a duplicate number
+    # Is only triggered when we have a duplicate number for fixed values
     if i > 0 and nums[i] == nums[i - 1]:
         print(f"Skipped at index {i} value {nums[i]}")
         continue
@@ -29,6 +29,9 @@ for i in range(length - 2):
         else:
             res.append([nums[i], nums[l], nums[r]])
             print(f"              values {nums[i], nums[l], nums[r]} have been added")
+            
+            
+            # Is only triggered to prevent duplicate values for left and right pointers
             while l < r and nums[l] == nums[l + 1]:
                 print("First while loop has been triggered")
                 l += 1
@@ -38,7 +41,8 @@ for i in range(length - 2):
                 print("Second while loop has been triggered")
                 r -= 1
                 print(f"           loop left is at {nums[l]}, right is at {nums[r]}")
-
+            ###########################################################################
+            
             l += 1
             r -= 1
 
